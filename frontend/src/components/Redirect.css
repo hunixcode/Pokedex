@@ -1,0 +1,92 @@
+.redirect-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #001935 0%, #00284d 50%, #003d66 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.redirect-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.redirect-pokemon {
+    position: absolute;
+    max-width: 600px;
+    height: auto;
+    z-index: 5;
+}
+
+.redirect-pokemon.left {
+    left: 5%;
+    bottom: -10%;
+    animation: floatLeft 8s ease-in-out infinite;
+}
+
+.redirect-pokemon.right {
+    right: 5%;
+    top: -10%;
+    animation: floatRight 8s ease-in-out infinite;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(30px) rotate(-5deg); }
+}
+
+.redirect-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.redirect-button {
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(0, 102, 128, 0.8);
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.redirect-button:hover {
+    background: rgba(0, 120, 150, 0.9);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.redirect-button:active {
+    transform: translateY(-2px);
+}
